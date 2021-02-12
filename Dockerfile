@@ -1,12 +1,12 @@
 FROM python:3.8-slim-buster
 
-LABEL maintainer="Josh Smith" \
-    description="Original by Aiden Gilmartin. Speedtest to InfluxDB data bridge"
+LABEL maintainer="Davi Frossard" \
+    description="Original by Josh Smith. Speedtest to InfluxDB data bridge"
 
 # Install dependencies
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
-RUN apt-get -q -y install --no-install-recommends apt-utils gnupg1 apt-transport-https dirmngr
+RUN apt-get -q -y install --no-install-recommends apt-utils gnupg1 apt-transport-https dirmngr build-essential
 
 # Install speedtest-cli
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 379CE192D401AB61
